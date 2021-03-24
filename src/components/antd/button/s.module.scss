@@ -5,19 +5,19 @@
   // primary regular
   --btn-primary-shadow: 0 8px 16px rgba(255, 67, 57, 0.16);
   --btn-primary-border: none;
-  --btn-primary-bg: #{$color-blue500};
+  --btn-primary-bg: #{$color-red500};
   --btn-primary-text: #fff;
 
   // primary hover
   --btn-primary-shadow-hover: 0 8px 16px rgba(255, 105, 97, 0.24);
   --btn-primary-border-hover: none;
-  --btn-primary-bg-hover: #{$color-blue200};
+  --btn-primary-bg-hover: #{$color-red200};
   --btn-primary-text-hover: #fff;
 
   // primary active
   --btn-primary-shadow-active: 0 4px 8px rgba(204, 54, 46, 0.16);
   --btn-primary-border-active: none;
-  --btn-primary-bg-active: #{$color-blue600};
+  --btn-primary-bg-active: #{$color-red600};
   --btn-primary-text-active: #fff;
 
   // primary disabled

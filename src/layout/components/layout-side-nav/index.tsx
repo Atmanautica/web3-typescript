@@ -78,12 +78,12 @@ const LayoutSideNav: React.FC = () => {
         </nav>
         <div className={s.bottom}>
           <Tooltip title={displayTooltip && 'Docs'} placement="right">
-            <a rel="noopener noreferrer" target="_blank" href="#" className={s.button}>
+            <button type="button" className={s.button}>
               <Icon name="docs-outlined" />
               <Text type="p2" weight="semibold" className={s.buttonLabel}>
                 Docs
               </Text>
-            </a>
+            </button>
           </Tooltip>
           <Tooltip title={displayTooltip && (isDarkTheme ? 'Light Theme' : 'Dark Theme')} placement="right">
             <button type="button" onClick={handleThemeToggle} className={s.button}>
