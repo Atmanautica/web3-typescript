@@ -12,11 +12,11 @@ import Grid from 'components/custom/grid';
 import Icon from 'components/custom/icon';
 import Identicon from 'components/custom/identicon';
 import { Text } from 'components/custom/typography';
+import { WssWeb3 } from 'components/providers/eth-web3-provider';
 import { useTheme } from 'components/providers/theme-provider';
 import { ReactComponent as ZeroNotificationsDarkSvg } from 'resources/svg/zero-notifications-dark.svg';
 import { ReactComponent as ZeroNotificationsSvg } from 'resources/svg/zero-notifications.svg';
 import { useWallet } from 'wallets/wallet';
-import { WssWeb3 } from 'components/providers/eth-web3-provider';
 
 import s from './s.module.scss';
 

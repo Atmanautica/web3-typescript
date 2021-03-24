@@ -5,18 +5,18 @@ import AntdSpin from 'antd/lib/spin';
 import WarningProvider from 'components/providers/warning-provider';
 import LayoutFooter from 'layout/components/layout-footer';
 import LayoutHeader from 'layout/components/layout-header';
-import LayoutSideNav from 'layout/components/layout-side-nav';
 
 import s from './s.module.scss';
+
+// import LayoutSideNav from 'layout/components/layout-side-nav';
 
 const FundsAlphaView = lazy(() => import('modules/funds-alpha'));
 
 const LayoutView: React.FC = () => {
   return (
     <div className={s.layout}>
-{/*
-      <LayoutSideNav />
-*/}
+      {/* <LayoutSideNav /> */}
+
       <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
         <WarningProvider>
           <LayoutHeader />

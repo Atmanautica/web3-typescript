@@ -1,21 +1,20 @@
-import React, { Suspense, lazy } from 'react';
+// import React, { Suspense, lazy } from 'react';
+// import { Redirect, Route, Switch, useHistory, useRouteMatch } from 'react-router-dom';
+// import AntdSpin from 'antd/lib/spin';
+// import Tabs from 'components/antd/tabs';
+// import Icon from 'components/custom/icon';
+// import { useWallet } from 'wallets/wallet';
+// import s from './s.module.scss';
+
+import React from 'react';
 import { isMobile } from 'react-device-detect';
-import { Redirect, Route, Switch, useHistory, useRouteMatch } from 'react-router-dom';
-import AntdSpin from 'antd/lib/spin';
 
 import Grid from 'components/custom/grid';
-import Tabs from 'components/antd/tabs';
-import Icon from 'components/custom/icon';
-
 import { useWarning } from 'components/providers/warning-provider';
-import { useWallet } from 'wallets/wallet';
-
-import s from './s.module.scss';
-
 
 const FundsAlphaView: React.FC = () => {
-  const history = useHistory();
-  const wallet = useWallet();
+  // const history = useHistory();
+  // const wallet = useWallet();
   const warning = useWarning();
 
   React.useEffect(() => {
@@ -40,11 +39,7 @@ const FundsAlphaView: React.FC = () => {
     };
   }, [isMobile]);
 
-  return (
-    <Grid flow="row">
-      Hello
-    </Grid>
-  );
+  return <Grid flow="row"> Hello moto </Grid>;
 };
 
 export default FundsAlphaView;

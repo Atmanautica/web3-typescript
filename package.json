@@ -10,7 +10,7 @@
     "prebuild": "npm run clean",
     "build": "GENERATE_SOURCEMAP=false node ./scripts/build-non-split.js",
     "build:prod": "react-scripts build",
-    "start": "react-scripts start",
+    "start": "react-scripts start --jsx",
     "start:prod": "node -r dotenv/config ./node_modules/.bin/react-scripts start dotenv_config_path=.env.production.local",
     "lessc": "lessc src/styles/antd.less src/styles/antd.css -js",
     "lint": "eslint src/**/*.ts{,x}",

@@ -61,20 +61,14 @@ export function isValidAddress(value: string | undefined): boolean {
   return !!value && isAddress(value) && value !== DEFAULT_ADDRESS;
 }
 
-export function doSequential<T, K = any>(
+export async function doSequential<T, K = any>(
   tasks: T[],
   callback: (task: T, index: number) => Promise<K>,
 ): Promise<(K | undefined)[]> {
   const results: (K | undefined)[] = [];
 
-  return tasks
-    .reduce(
-      (p, task, index) =>
-        p
-          .then(() => callback(task, index))
-          .then(result => results.push(result))
-          .catch(() => results.push(undefined)) as Promise<any>,
-      Promise.resolve(),
-    )
-    .then(() => results);
+  await tasks.reduce((p, task_2, index) => p.then(() => callback(task_2, index))
+    .then(result => results.push(result))
+    .catch(() => results.push(undefined)) as Promise<any>, Promise.resolve());
+  return results;
 }

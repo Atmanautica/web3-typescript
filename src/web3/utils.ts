@@ -206,16 +206,16 @@ type GasPriceResult = {
   safeLow: number;
 };
 
-export function fetchGasPrice(): Promise<GasPriceResult> {
-  return fetch(`https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${ETHERSCAN_API_KEY}`)
-    .then(result => result.json())
-    .then(result => result.result)
-    .then(result => {
-      return {
-        veryFast: Number(result.FastGasPrice),
-        fast: Number(result.ProposeGasPrice),
-        average: Math.round((Number(result.ProposeGasPrice) + Number(result.SafeGasPrice)) / 2),
-        safeLow: Number(result.SafeGasPrice),
-      };
-    });
+export async function fetchGasPrice(): Promise<GasPriceResult> {
+  const result = await fetch(`
+    https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${ETHERSCAN_API_KEY}
+  `);
+  const result1 = await result.json();
+  const result2 = result1.result;
+  return {
+    veryFast: Number(result2.FastGasPrice),
+    fast: Number(result2.ProposeGasPrice),
+    average: Math.round((Number(result2.ProposeGasPrice) + Number(result2.SafeGasPrice)) / 2),
+    safeLow: Number(result2.SafeGasPrice),
+  };
 }
